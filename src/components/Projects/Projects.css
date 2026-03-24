@@ -78,8 +78,8 @@
 .project-tag {
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--primary-dark);
-  background: rgba(99,102,241,0.1);
+  color: var(--badge-text);
+  background: var(--badge-bg);
   padding: 0.2rem 0.65rem;
   border-radius: 100px;
 }

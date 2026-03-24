@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
+import { useTheme } from '../../hooks/useTheme'
 import { personalInfo } from '../../data/resumeData'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './Navbar.css'
 
 const navItems = [
@@ -17,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const activeId = useScrollSpy(navItems.map((i) => i.href))
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     function onScroll() {
@@ -42,16 +45,19 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <button
-        className="nav-toggle"
-        id="navToggle"
-        aria-label="菜单"
-        onClick={() => setMenuOpen((v) => !v)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div className="nav-right">
+        <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        <button
+          className="nav-toggle"
+          id="navToggle"
+          aria-label="菜单"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   )
 }

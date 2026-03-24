@@ -1,0 +1,48 @@
+.theme-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.theme-select {
+  appearance: none;
+  background: var(--nav-bg, rgba(255, 255, 255, 0.15));
+  color: var(--text, #fff);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.3));
+  border-radius: var(--radius-sm, 8px);
+  padding: 0.35rem 2rem 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition, all 0.3s ease);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  min-width: 120px;
+}
+
+.theme-select:hover {
+  border-color: var(--primary, #6366f1);
+}
+
+.theme-select:focus {
+  box-shadow: 0 0 0 2px var(--ring, rgba(99, 102, 241, 0.35));
+}
+
+/* When navbar is scrolled / light background, make text dark */
+#navbar.scrolled .theme-select {
+  background: var(--card, #fff);
+  color: var(--text, #0f172a);
+  border-color: var(--border, #e2e8f0);
+}
+
+@media (max-width: 768px) {
+  .theme-switcher {
+    margin-right: 0.5rem;
+  }
+
+  .theme-select {
+    min-width: 100px;
+    font-size: 0.78rem;
+  }
+}
