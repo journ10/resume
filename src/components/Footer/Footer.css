@@ -1,8 +1,8 @@
 footer {
-  background: var(--gradient-hero);
+  background: var(--hero-gradient);
   padding: 2.5rem 2rem;
   text-align: center;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.88rem;
 }
 
@@ -25,16 +25,20 @@ footer {
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 footer p {
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-heart {
+  color: var(--heart-color, #f43f5e);
 }

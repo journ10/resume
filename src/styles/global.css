@@ -1,22 +1,286 @@
-:root {
+/* =========================================================
+   THEME TOKENS
+   ========================================================= */
+
+/* --- Light (default) ----------------------------------- */
+:root,
+[data-theme="light"] {
+  --bg: #fcfcfd;
+  --bg-elevated: #f8fafc;
+  --card: #ffffff;
+  --card-muted: #f1f5f9;
+
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+
   --primary: #6366f1;
   --primary-dark: #4f46e5;
   --primary-light: #818cf8;
   --secondary: #06b6d4;
-  --bg: #f8fafc;
-  --bg-card: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+
   --border: #e2e8f0;
-  --shadow: 0 4px 24px rgba(99,102,241,0.10);
-  --shadow-lg: 0 8px 40px rgba(99,102,241,0.18);
+  --border-strong: #cbd5e1;
+
+  --shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+  --shadow-lg: 0 8px 40px rgba(99, 102, 241, 0.18);
+
+  --link: #6366f1;
+  --link-hover: #4f46e5;
+
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #1e3a5f 100%);
   --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #1e3a5f 100%);
+  --selection: rgba(99, 102, 241, 0.18);
+  --ring: rgba(99, 102, 241, 0.35);
+
+  --hero-orb-1: radial-gradient(circle, #6366f1, transparent);
+  --hero-orb-2: radial-gradient(circle, #06b6d4, transparent);
+  --hero-orb-3: radial-gradient(circle, #8b5cf6, transparent);
+
+  --code-bg: #f8fafc;
+  --code-text: #1e293b;
+
+  --badge-bg: #dbeafe;
+  --badge-text: #1d4ed8;
+
+  --heart-color: #f43f5e;
+
   --radius: 16px;
   --radius-sm: 8px;
-  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Backward-compat aliases used by component CSS */
+  --bg-card: var(--card);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
 }
+
+/* --- Dark ---------------------------------------------- */
+[data-theme="dark"] {
+  --bg: #0b1120;
+  --bg-elevated: #111827;
+  --card: #0f172a;
+  --card-muted: #172033;
+
+  --text: #e5eefb;
+  --text-muted: #b6c2d2;
+  --text-soft: #8a98ab;
+
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+  --primary-light: #93c5fd;
+  --secondary: #38bdf8;
+
+  --border: #22304a;
+  --border-strong: #31415f;
+
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+  --shadow-lg: 0 8px 22px rgba(0, 0, 0, 0.24);
+
+  --link: #7cc4ff;
+  --link-hover: #a5d8ff;
+
+  --nav-bg: rgba(11, 17, 32, 0.78);
+  --hero-gradient: linear-gradient(135deg, #0b1120 0%, #111827 52%, #172033 100%);
+  --gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #38bdf8 100%);
+  --selection: rgba(96, 165, 250, 0.24);
+  --ring: rgba(96, 165, 250, 0.42);
+
+  --hero-orb-1: radial-gradient(circle, #60a5fa, transparent);
+  --hero-orb-2: radial-gradient(circle, #38bdf8, transparent);
+  --hero-orb-3: radial-gradient(circle, #818cf8, transparent);
+
+  --code-bg: #0a1222;
+  --code-text: #d8e6f8;
+
+  --badge-bg: rgba(96, 165, 250, 0.16);
+  --badge-text: #93c5fd;
+
+  --heart-color: #fb7185;
+}
+
+/* --- Blue Tech ----------------------------------------- */
+[data-theme="blue-tech"] {
+  --bg: #07111f;
+  --bg-elevated: #0b1728;
+  --card: rgba(11, 23, 40, 0.95);
+  --card-muted: #102038;
+
+  --text: #e6f2ff;
+  --text-muted: #a9bed7;
+  --text-soft: #7f97b2;
+
+  --primary: #00c2ff;
+  --primary-dark: #00aee6;
+  --primary-light: #66dbff;
+  --secondary: #2f7bff;
+
+  --border: rgba(82, 160, 255, 0.22);
+  --border-strong: rgba(82, 160, 255, 0.38);
+
+  --shadow: 0 18px 42px rgba(0, 8, 20, 0.45);
+  --shadow-lg: 0 10px 24px rgba(0, 8, 20, 0.3);
+
+  --link: #55d7ff;
+  --link-hover: #8be7ff;
+
+  --nav-bg: rgba(5, 13, 24, 0.72);
+  --hero-gradient: linear-gradient(135deg, #07111f 0%, #0a1d34 46%, #0f2f57 100%);
+  --gradient: linear-gradient(135deg, #00c2ff 0%, #2f7bff 100%);
+  --selection: rgba(0, 194, 255, 0.24);
+  --ring: rgba(0, 194, 255, 0.40);
+
+  --hero-orb-1: radial-gradient(circle, #00c2ff, transparent);
+  --hero-orb-2: radial-gradient(circle, #2f7bff, transparent);
+  --hero-orb-3: radial-gradient(circle, #0080ff, transparent);
+
+  --code-bg: #09172a;
+  --code-text: #d4ebff;
+
+  --badge-bg: rgba(0, 194, 255, 0.14);
+  --badge-text: #66dbff;
+
+  --heart-color: #00c2ff;
+}
+
+/* --- Warm Paper ---------------------------------------- */
+[data-theme="warm-paper"] {
+  --bg: #f6f0e7;
+  --bg-elevated: #fbf6ef;
+  --card: #fffaf2;
+  --card-muted: #f0e7da;
+
+  --text: #3a2f28;
+  --text-muted: #6b5b4e;
+  --text-soft: #8a786a;
+
+  --primary: #b5653b;
+  --primary-dark: #9f5630;
+  --primary-light: #d4845c;
+  --secondary: #c9864a;
+
+  --border: #e5d7c6;
+  --border-strong: #d2c1ad;
+
+  --shadow: 0 12px 28px rgba(89, 63, 38, 0.10);
+  --shadow-lg: 0 6px 16px rgba(89, 63, 38, 0.06);
+
+  --link: #a6542c;
+  --link-hover: #8f4724;
+
+  --nav-bg: rgba(251, 246, 239, 0.88);
+  --hero-gradient: linear-gradient(135deg, #3a2f28 0%, #5c3d24 50%, #4a3020 100%);
+  --gradient: linear-gradient(135deg, #b5653b 0%, #c9864a 100%);
+  --selection: rgba(181, 101, 59, 0.18);
+  --ring: rgba(181, 101, 59, 0.28);
+
+  --hero-orb-1: radial-gradient(circle, #b5653b, transparent);
+  --hero-orb-2: radial-gradient(circle, #c9864a, transparent);
+  --hero-orb-3: radial-gradient(circle, #d4845c, transparent);
+
+  --code-bg: #f3eadf;
+  --code-text: #4b3b31;
+
+  --badge-bg: #ead8c6;
+  --badge-text: #8f4724;
+
+  --heart-color: #b5653b;
+}
+
+/* --- Purple Neon --------------------------------------- */
+[data-theme="purple-neon"] {
+  --bg: #0c0616;
+  --bg-elevated: #150b24;
+  --card: rgba(22, 11, 36, 0.95);
+  --card-muted: #1c1030;
+
+  --text: #f3eefe;
+  --text-muted: #c5b7e6;
+  --text-soft: #9e8fc4;
+
+  --primary: #b026ff;
+  --primary-dark: #9625db;
+  --primary-light: #d68cff;
+  --secondary: #ff47d5;
+
+  --border: rgba(176, 38, 255, 0.28);
+  --border-strong: rgba(255, 71, 213, 0.42);
+
+  --shadow: 0 18px 44px rgba(8, 0, 18, 0.52);
+  --shadow-lg: 0 10px 24px rgba(8, 0, 18, 0.34);
+
+  --link: #d68cff;
+  --link-hover: #f0b6ff;
+
+  --nav-bg: rgba(12, 6, 22, 0.74);
+  --hero-gradient: linear-gradient(135deg, #0c0616 0%, #24103d 50%, #3d1366 100%);
+  --gradient: linear-gradient(135deg, #b026ff 0%, #ff47d5 100%);
+  --selection: rgba(176, 38, 255, 0.24);
+  --ring: rgba(255, 71, 213, 0.36);
+
+  --hero-orb-1: radial-gradient(circle, #b026ff, transparent);
+  --hero-orb-2: radial-gradient(circle, #ff47d5, transparent);
+  --hero-orb-3: radial-gradient(circle, #7c3aed, transparent);
+
+  --code-bg: #140a22;
+  --code-text: #f0ddff;
+
+  --badge-bg: rgba(176, 38, 255, 0.16);
+  --badge-text: #e4a8ff;
+
+  --heart-color: #ff47d5;
+}
+
+/* --- Retro Terminal ------------------------------------ */
+[data-theme="retro-terminal"] {
+  --bg: #08110b;
+  --bg-elevated: #0c1710;
+  --card: #0b140d;
+  --card-muted: #112016;
+
+  --text: #9df7b1;
+  --text-muted: #73c488;
+  --text-soft: #4f8f61;
+
+  --primary: #7dff9b;
+  --primary-dark: #64ea84;
+  --primary-light: #b7ffc6;
+  --secondary: #00ff88;
+
+  --border: rgba(125, 255, 155, 0.20);
+  --border-strong: rgba(125, 255, 155, 0.34);
+
+  --shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 8px 18px rgba(0, 0, 0, 0.28);
+
+  --link: #7dff9b;
+  --link-hover: #b7ffc6;
+
+  --nav-bg: rgba(8, 17, 11, 0.82);
+  --hero-gradient: linear-gradient(135deg, #08110b 0%, #0d1a11 52%, #112517 100%);
+  --gradient: linear-gradient(135deg, #7dff9b 0%, #00ff88 100%);
+  --selection: rgba(125, 255, 155, 0.20);
+  --ring: rgba(125, 255, 155, 0.32);
+
+  --hero-orb-1: radial-gradient(circle, #7dff9b, transparent);
+  --hero-orb-2: radial-gradient(circle, #00ff88, transparent);
+  --hero-orb-3: radial-gradient(circle, #4fdb6b, transparent);
+
+  --code-bg: #071009;
+  --code-text: #9df7b1;
+
+  --badge-bg: rgba(125, 255, 155, 0.12);
+  --badge-text: #9df7b1;
+
+  --heart-color: #7dff9b;
+  --font-body: 'Courier New', 'Lucida Console', monospace;
+}
+
+/* =========================================================
+   GLOBAL RESET & BASE
+   ========================================================= */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -29,11 +293,25 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
   background: var(--bg);
-  color: var(--text-primary);
+  color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+::selection {
+  background: var(--selection);
 }
 
 section {
@@ -63,14 +341,14 @@ section {
 .section-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text);
   letter-spacing: -1px;
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   max-width: 500px;
   margin: 0 auto;
 }
@@ -82,6 +360,10 @@ section {
   border-radius: 2px;
   margin: 1rem auto 0;
 }
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
 
 .reveal {
   opacity: 0;
@@ -116,6 +398,10 @@ section {
   transform: translateX(0);
 }
 
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -133,29 +419,37 @@ section {
 .btn-primary {
   background: var(--gradient);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(99,102,241,0.45);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(99,102,241,0.6);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-outline {
   background: transparent;
-  color: rgba(255,255,255,0.85);
-  border: 1.5px solid rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
 }
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 768px) {
   section { padding: 4rem 1.25rem; }

@@ -14,7 +14,7 @@ export default function Footer() {
       </ul>
       <p>
         © {new Date().getFullYear()} {personalInfo.name}. 保留所有权利. Made with{' '}
-        <i className="fas fa-heart" style={{ color: '#f43f5e' }}></i> in China
+        <i className="fas fa-heart footer-heart"></i> in China
       </p>
     </footer>
   )
