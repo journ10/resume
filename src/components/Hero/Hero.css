@@ -203,3 +203,155 @@
 @media (max-width: 768px) {
   .hero-actions { flex-direction: column; align-items: center; }
 }
+
+/* =========================================================
+   HERO — theme-specific overlays & effects
+   ========================================================= */
+
+/* Shared: ensure hero can host ::before overlay */
+#hero {
+  isolation: isolate;
+}
+
+/* ---- Blue Tech: holographic grid in hero -------------- */
+[data-theme="blue-tech"] #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="blue-tech"] .hero-bg-orb {
+  opacity: 0.35;
+}
+
+[data-theme="blue-tech"] .hero-badge {
+  border-color: rgba(0, 194, 255, 0.45);
+  background: rgba(0, 194, 255, 0.1);
+  color: #66dbff;
+}
+
+[data-theme="blue-tech"] .hero-avatar {
+  box-shadow: 0 0 0 4px rgba(0, 194, 255, 0.25), 0 0 48px rgba(0, 194, 255, 0.3);
+}
+
+/* ---- Warm Paper: soft vignette warmth in hero --------- */
+[data-theme="warm-paper"] #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.25) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="warm-paper"] .hero-badge {
+  border-color: rgba(181, 101, 59, 0.45);
+  background: rgba(181, 101, 59, 0.15);
+  color: #d4845c;
+}
+
+[data-theme="warm-paper"] .hero-avatar {
+  box-shadow: 0 0 0 4px rgba(181, 101, 59, 0.25), 0 8px 40px rgba(89, 63, 38, 0.4);
+}
+
+[data-theme="warm-paper"] .hero-bg-orb {
+  opacity: 0.2;
+  animation-duration: 12s;
+}
+
+/* ---- Purple Neon: animated gradient wash in hero ------ */
+[data-theme="purple-neon"] #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(176, 38, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(255, 71, 213, 0.1) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+  animation: neon-wash 6s ease-in-out infinite alternate;
+}
+
+@keyframes neon-wash {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+[data-theme="purple-neon"] .hero-badge {
+  border-color: rgba(176, 38, 255, 0.5);
+  background: rgba(176, 38, 255, 0.12);
+  color: #d68cff;
+}
+
+[data-theme="purple-neon"] .hero-avatar {
+  box-shadow: 0 0 0 4px rgba(176, 38, 255, 0.3), 0 0 60px rgba(176, 38, 255, 0.35);
+}
+
+[data-theme="purple-neon"] .hero-bg-orb {
+  opacity: 0.38;
+}
+
+/* ---- Retro Terminal: scanline & phosphor in hero ------ */
+[data-theme="retro-terminal"] #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 0, 0, 0.09) 3px,
+    rgba(0, 0, 0, 0.09) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="retro-terminal"] .hero-badge {
+  border-color: rgba(125, 255, 155, 0.45);
+  background: rgba(125, 255, 155, 0.08);
+  color: #9df7b1;
+  font-family: 'Courier New', monospace;
+}
+
+[data-theme="retro-terminal"] .hero-avatar {
+  box-shadow: 0 0 0 4px rgba(125, 255, 155, 0.22), 0 0 50px rgba(125, 255, 155, 0.25);
+}
+
+[data-theme="retro-terminal"] .hero-bg-orb {
+  opacity: 0.18;
+}
+
+[data-theme="retro-terminal"] .hero-desc {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Dark: richer orbs ---------------------------------*/
+[data-theme="dark"] .hero-bg-orb {
+  opacity: 0.32;
+}
+
+[data-theme="dark"] .hero-avatar {
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.22), 0 0 50px rgba(96, 165, 250, 0.22);
+}
+
+/* ---- Reduced motion ------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="purple-neon"] #hero::before {
+    animation: none;
+  }
+
+  .hero-bg-orb {
+    animation: none;
+  }
+}

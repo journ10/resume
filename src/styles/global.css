@@ -454,3 +454,243 @@ section {
 @media (max-width: 768px) {
   section { padding: 4rem 1.25rem; }
 }
+
+/* =========================================================
+   THEME-SPECIFIC VISUAL EFFECTS
+   ========================================================= */
+
+/* ---- Smooth theme-change transitions on key elements --- */
+#navbar,
+.project-card,
+.timeline-card,
+.edu-card,
+.skills-category,
+.contact-item,
+.about-info-item {
+  transition: background 0.35s ease, border-color 0.35s ease,
+    color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* =========================================================
+   LIGHT — crisp glass polish
+   ========================================================= */
+
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.38), 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .timeline-card:hover,
+[data-theme="light"] .edu-card:hover {
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================================
+   DARK — depth glow & layered surfaces
+   ========================================================= */
+
+[data-theme="dark"] .btn-primary {
+  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.28);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(96, 165, 250, 0.48), 0 0 60px rgba(96, 165, 250, 0.12);
+}
+
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .timeline-card:hover,
+[data-theme="dark"] .edu-card:hover {
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2), 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   BLUE TECH — techy grid, cyan glows
+   ========================================================= */
+
+/* Subtle tech grid across the whole page */
+[data-theme="blue-tech"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.032) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="blue-tech"] .btn-primary {
+  box-shadow: 0 0 16px rgba(0, 194, 255, 0.38), 0 4px 20px rgba(0, 194, 255, 0.22);
+}
+
+[data-theme="blue-tech"] .btn-primary:hover {
+  box-shadow: 0 0 28px rgba(0, 194, 255, 0.55), 0 8px 30px rgba(0, 194, 255, 0.32);
+}
+
+[data-theme="blue-tech"] .project-card:hover,
+[data-theme="blue-tech"] .timeline-card:hover,
+[data-theme="blue-tech"] .edu-card:hover,
+[data-theme="blue-tech"] .skills-category:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 18px rgba(0, 194, 255, 0.18), 0 8px 32px rgba(0, 8, 20, 0.44) !important;
+}
+
+/* =========================================================
+   WARM PAPER — soft floating, gentle warmth
+   ========================================================= */
+
+/* Very subtle warm paper grain */
+[data-theme="warm-paper"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(181, 101, 59, 0.014) 2px,
+    rgba(181, 101, 59, 0.014) 3px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="warm-paper"] .project-card:hover,
+[data-theme="warm-paper"] .timeline-card:hover,
+[data-theme="warm-paper"] .edu-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 44px rgba(89, 63, 38, 0.16), 0 4px 12px rgba(89, 63, 38, 0.08) !important;
+}
+
+[data-theme="warm-paper"] .btn-primary {
+  box-shadow: 0 4px 18px rgba(181, 101, 59, 0.28);
+}
+
+[data-theme="warm-paper"] .btn-primary:hover {
+  box-shadow: 0 8px 28px rgba(181, 101, 59, 0.38);
+}
+
+/* =========================================================
+   PURPLE NEON — neon glow, animated accent pulse
+   ========================================================= */
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(176, 38, 255, 0.45), 0 4px 20px rgba(176, 38, 255, 0.28);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(176, 38, 255, 0.68), 0 0 52px rgba(255, 71, 213, 0.24);
+  }
+}
+
+[data-theme="purple-neon"] .btn-primary {
+  animation: neon-pulse 2.6s ease-in-out infinite;
+}
+
+[data-theme="purple-neon"] .btn-primary:hover {
+  animation: none;
+  box-shadow: 0 0 36px rgba(176, 38, 255, 0.75), 0 8px 32px rgba(255, 71, 213, 0.4);
+}
+
+[data-theme="purple-neon"] .hero-name {
+  text-shadow: 0 0 30px rgba(176, 38, 255, 0.35);
+}
+
+[data-theme="purple-neon"] .section-title {
+  text-shadow: 0 0 18px rgba(176, 38, 255, 0.22);
+}
+
+[data-theme="purple-neon"] .project-card:hover,
+[data-theme="purple-neon"] .timeline-card:hover,
+[data-theme="purple-neon"] .edu-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 22px rgba(176, 38, 255, 0.22), 0 8px 36px rgba(8, 0, 18, 0.5) !important;
+}
+
+/* =========================================================
+   RETRO TERMINAL — scanlines, phosphor glow
+   ========================================================= */
+
+/* CRT scanline overlay */
+[data-theme="retro-terminal"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 0, 0, 0.07) 3px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Phosphor glow on key text */
+[data-theme="retro-terminal"] .hero-name {
+  text-shadow: 0 0 22px rgba(125, 255, 155, 0.5), 0 0 60px rgba(125, 255, 155, 0.15);
+}
+
+[data-theme="retro-terminal"] .section-title {
+  text-shadow: 0 0 14px rgba(125, 255, 155, 0.4);
+}
+
+[data-theme="retro-terminal"] .typewriter-text {
+  text-shadow: 0 0 12px rgba(125, 255, 155, 0.6);
+}
+
+[data-theme="retro-terminal"] .cursor {
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary), 0 0 20px rgba(125, 255, 155, 0.4);
+}
+
+/* Terminal-style buttons */
+[data-theme="retro-terminal"] .btn-primary {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  box-shadow: 0 0 14px rgba(125, 255, 155, 0.32), inset 0 0 8px rgba(125, 255, 155, 0.06);
+}
+
+[data-theme="retro-terminal"] .btn-primary:hover {
+  box-shadow: 0 0 24px rgba(125, 255, 155, 0.5), inset 0 0 12px rgba(125, 255, 155, 0.1);
+}
+
+[data-theme="retro-terminal"] .btn-outline {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+[data-theme="retro-terminal"] .project-card:hover,
+[data-theme="retro-terminal"] .timeline-card:hover,
+[data-theme="retro-terminal"] .edu-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 16px rgba(125, 255, 155, 0.16), 0 8px 28px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* =========================================================
+   REDUCED MOTION — disable decorative animations
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="purple-neon"] .btn-primary {
+    animation: none;
+  }
+
+  [data-theme="retro-terminal"] body::after {
+    display: none;
+  }
+
+  [data-theme="blue-tech"] body::before {
+    display: none;
+  }
+
+  [data-theme="warm-paper"] body::before {
+    display: none;
+  }
+}
