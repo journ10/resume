@@ -2,64 +2,58 @@
    THEME TOKENS
    ========================================================= */
 
-/* --- Light (default) — macOS 26 Liquid Glass ----------- */
+/* --- Light (default) — Daylight Glass ------------------ */
 :root,
 [data-theme="light"] {
-  --bg: #f0f4ff;
-  --bg-elevated: #e8eeff;
-  --card: rgba(255, 255, 255, 0.55);
-  --card-muted: rgba(240, 244, 255, 0.6);
+  --bg: #f8f7ff;
+  --bg-elevated: #f0eeff;
+  --card: #ffffff;
+  --card-muted: #f5f4ff;
 
-  --text: #0f172a;
-  --text-muted: #475569;
-  --text-soft: #64748b;
+  --text: #1a1730;
+  --text-muted: #4a4770;
+  --text-soft: #7470a0;
 
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
+  --primary: #5b58f0;
+  --primary-dark: #4340d4;
+  --primary-light: #8280f8;
   --secondary: #06b6d4;
 
-  --border: rgba(255, 255, 255, 0.6);
-  --border-strong: rgba(255, 255, 255, 0.85);
+  --border: rgba(91, 88, 240, 0.12);
+  --border-strong: rgba(91, 88, 240, 0.22);
 
-  --shadow: 0 8px 32px rgba(99, 102, 241, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 16px 48px rgba(99, 102, 241, 0.12), 0 4px 16px rgba(0, 0, 0, 0.07);
+  --shadow: 0 4px 20px rgba(91, 88, 240, 0.08);
+  --shadow-lg: 0 12px 48px rgba(91, 88, 240, 0.16);
 
-  --link: #6366f1;
-  --link-hover: #4f46e5;
+  --link: #5b58f0;
+  --link-hover: #4340d4;
 
-  --nav-bg: rgba(255, 255, 255, 0.7);
-  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #1e3a5f 100%);
-  --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-  --selection: rgba(99, 102, 241, 0.18);
-  --ring: rgba(99, 102, 241, 0.35);
+  --nav-bg: rgba(248, 247, 255, 0.85);
 
-  --hero-orb-1: radial-gradient(circle, #6366f1, transparent);
-  --hero-orb-2: radial-gradient(circle, #06b6d4, transparent);
-  --hero-orb-3: radial-gradient(circle, #8b5cf6, transparent);
+  /* Hero 改为浅色方案 */
+  --hero-gradient: linear-gradient(160deg, #f8f7ff 0%, #ede9ff 35%, #e0f2fe 100%);
 
-  --code-bg: rgba(248, 250, 252, 0.8);
-  --code-text: #1e293b;
+  --gradient: linear-gradient(135deg, #5b58f0 0%, #8b5cf6 50%, #06b6d4 100%);
+  --selection: rgba(91, 88, 240, 0.15);
+  --ring: rgba(91, 88, 240, 0.3);
 
-  --badge-bg: rgba(219, 234, 254, 0.8);
-  --badge-text: #1d4ed8;
+  --hero-orb-1: radial-gradient(circle, rgba(99,102,241,0.55), transparent);
+  --hero-orb-2: radial-gradient(circle, rgba(6,182,212,0.45), transparent);
+  --hero-orb-3: radial-gradient(circle, rgba(139,92,246,0.4), transparent);
+
+  --code-bg: #f1f0ff;
+  --code-text: #2d2b60;
+
+  --badge-bg: rgba(91, 88, 240, 0.08);
+  --badge-text: #4340d4;
 
   --heart-color: #f43f5e;
 
-  --radius: 20px;
-  --radius-sm: 12px;
+  --radius: 18px;
+  --radius-sm: 10px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Liquid Glass dedicated variables */
-  --glass-blur: blur(40px) saturate(1.8) brightness(1.05);
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-border-top: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.45);
-  --glass-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(0,0,0,0.04), 0 8px 32px rgba(99,102,241,0.1), 0 2px 8px rgba(0,0,0,0.06);
-  --glass-shadow-hover: inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(0,0,0,0.04), 0 20px 60px rgba(99,102,241,0.18), 0 4px 16px rgba(0,0,0,0.08);
-
-  /* Backward-compat aliases used by component CSS */
   --bg-card: var(--card);
   --text-primary: var(--text);
   --text-secondary: var(--text-muted);
@@ -480,173 +474,177 @@ section {
 }
 
 /* =========================================================
-   LIGHT — macOS 26 Liquid Glass
+   LIGHT — Daylight Glass
    ========================================================= */
 
-/* Ambient color orbs behind the page — gives glass something to refract */
+/* ---- 全局彩色光晕底层（让卡片 backdrop-filter 有色可透） ---- */
 [data-theme="light"] body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 85% 5%,  rgba(99, 102, 241, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 40% at 5%  95%,  rgba(6, 182, 212, 0.15)  0%, transparent 55%),
-    radial-gradient(ellipse 40% 35% at 50% 50%,  rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 90%  0%,  rgba(99,102,241,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 0%  100%, rgba(6,182,212,0.18)  0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 45%  55%, rgba(139,92,246,0.10) 0%, transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* ---- Core glass card mixin (applied to all surfaces) ---- */
+/* ---- Hero：亮色背景，orb 加深，所有文字改为深色 ---- */
+[data-theme="light"] #hero {
+  background: var(--hero-gradient) !important;
+}
+[data-theme="light"] .hero-bg-orb {
+  opacity: 0.45;
+}
+[data-theme="light"] .hero-name {
+  color: var(--text) !important;
+}
+[data-theme="light"] .hero-desc {
+  color: var(--text-muted) !important;
+}
+[data-theme="light"] .cursor {
+  background: var(--primary) !important;
+}
+[data-theme="light"] .hero-scroll-hint {
+  color: var(--text-soft) !important;
+}
+[data-theme="light"] .scroll-arrow {
+  border-right-color: var(--text-soft) !important;
+  border-bottom-color: var(--text-soft) !important;
+}
+
+/* Hero badge：白色玻璃胶囊 */
+[data-theme="light"] .hero-badge {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(91, 88, 240, 0.18);
+  color: var(--primary);
+  box-shadow: 0 2px 12px rgba(91,88,240,0.1);
+}
+[data-theme="light"] .hero-badge i {
+  color: #10b981;
+}
+
+/* Hero avatar：玻璃圆盘 */
+[data-theme="light"] .hero-avatar {
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 0 3px rgba(91,88,240,0.15),
+    0 0 0 6px rgba(91,88,240,0.06),
+    0 8px 32px rgba(91,88,240,0.18) !important;
+  color: var(--primary) !important;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+/* Hero 按钮 */
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #5b58f0 0%, #8b5cf6 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 20px rgba(91,88,240,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 8px 36px rgba(91,88,240,0.52), inset 0 1px 0 rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+[data-theme="light"] .btn-outline {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(91,88,240,0.22);
+  color: var(--primary);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 8px rgba(91,88,240,0.08);
+}
+[data-theme="light"] .btn-outline:hover {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(91,88,240,0.36);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(91,88,240,0.14);
+  transform: translateY(-2px);
+}
+
+/* ---- Navbar：Hero 变亮后，未滚动时用深色文字 ---- */
+[data-theme="light"] #navbar:not(.scrolled) .nav-links a {
+  color: var(--text-muted) !important;
+}
+[data-theme="light"] #navbar:not(.scrolled) .nav-links a:hover,
+[data-theme="light"] #navbar:not(.scrolled) .nav-links a.active {
+  color: var(--primary) !important;
+}
+[data-theme="light"] #navbar:not(.scrolled) .nav-toggle span {
+  background: var(--text) !important;
+}
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(248,247,255,0.82) !important;
+  backdrop-filter: blur(48px) saturate(1.8);
+  -webkit-backdrop-filter: blur(48px) saturate(1.8);
+  border-bottom: 1px solid rgba(91,88,240,0.1);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.9), 0 4px 24px rgba(91,88,240,0.07);
+}
+
+/* ---- 卡片：真正的 Liquid Glass（透出 body::before 光晕） ---- */
 [data-theme="light"] .project-card,
 [data-theme="light"] .timeline-card,
 [data-theme="light"] .edu-card,
 [data-theme="light"] .skills-category,
 [data-theme="light"] .about-stat-badge,
 [data-theme="light"] .contact-item {
-  background: var(--glass-bg) !important;
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border) !important;
-  border-top-color: var(--glass-border-top) !important;
-  box-shadow: var(--glass-shadow) !important;
-  border-radius: var(--radius) !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  backdrop-filter: blur(28px) saturate(1.6) brightness(1.03) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(1.6) brightness(1.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-top-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(91,88,240,0.04),
+    0 4px 24px rgba(91,88,240,0.09),
+    0 1px 4px rgba(0,0,0,0.04) !important;
 }
-
 [data-theme="light"] .project-card:hover,
 [data-theme="light"] .timeline-card:hover,
 [data-theme="light"] .edu-card:hover,
 [data-theme="light"] .contact-item:hover {
-  background: rgba(255, 255, 255, 0.75) !important;
-  backdrop-filter: blur(60px) saturate(2) brightness(1.08);
-  -webkit-backdrop-filter: blur(60px) saturate(2) brightness(1.08);
-  box-shadow: var(--glass-shadow-hover) !important;
-  border-color: rgba(255, 255, 255, 0.7) !important;
-  border-top-color: rgba(255, 255, 255, 1) !important;
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(40px) saturate(1.8) brightness(1.05) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(1.8) brightness(1.05) !important;
+  border-color: rgba(255,255,255,0.85) !important;
+  border-top-color: rgba(255,255,255,1) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(91,88,240,0.05),
+    0 16px 48px rgba(91,88,240,0.15),
+    0 2px 8px rgba(0,0,0,0.05) !important;
+  transform: translateY(-5px);
 }
 
-/* ---- Navbar: frosted glass bar ---- */
-[data-theme="light"] #navbar.scrolled {
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(60px) saturate(1.8);
-  -webkit-backdrop-filter: blur(60px) saturate(1.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.8), 0 4px 24px rgba(99,102,241,0.08);
+/* ---- ThemeSwitcher ---- */
+[data-theme="light"] .ts-trigger {
+  background: rgba(255,255,255,0.65) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(91,88,240,0.15) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(91,88,240,0.07) !important;
+  color: var(--text) !important;
 }
-
-/* ---- Primary button: glass + gradient ---- */
-[data-theme="light"] .btn-primary {
-  background: linear-gradient(135deg, rgba(99,102,241,0.85) 0%, rgba(139,92,246,0.85) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 4px 20px rgba(99,102,241,0.35);
-  color: #fff;
-}
-
-[data-theme="light"] .btn-primary:hover {
-  background: linear-gradient(135deg, rgba(99,102,241,0.95) 0%, rgba(139,92,246,0.95) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 8px 32px rgba(99,102,241,0.45);
-  transform: translateY(-2px);
-}
-
-/* ---- Outline button: glass ---- */
-[data-theme="light"] .btn-outline {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 8px rgba(0,0,0,0.06);
-  color: var(--primary);
-}
-
-[data-theme="light"] .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.72);
-  border-color: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(99,102,241,0.15);
-  transform: translateY(-2px);
-}
-
-/* ---- ThemeSwitcher panel: glass dropdown ---- */
 [data-theme="light"] .ts-panel {
-  background: rgba(255, 255, 255, 0.72) !important;
+  background: rgba(255,255,255,0.82) !important;
   backdrop-filter: blur(40px) saturate(1.8);
   -webkit-backdrop-filter: blur(40px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
-  border-top-color: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 20px 60px rgba(99,102,241,0.15), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+  border: 1px solid rgba(255,255,255,0.8) !important;
+  border-top-color: rgba(255,255,255,1) !important;
+  box-shadow: 0 20px 60px rgba(91,88,240,0.14), inset 0 1px 0 rgba(255,255,255,1) !important;
 }
 
-[data-theme="light"] .ts-trigger {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.06);
-}
-
-/* ---- Skill tags: glass pills ---- */
-[data-theme="light"] .skill-tag {
-  background: rgba(255, 255, 255, 0.55) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
-  border-top-color: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8) !important;
-  color: var(--primary) !important;
-}
-
-/* ---- Section headers keep clean look ---- */
-[data-theme="light"] .section-tag {
-  background: rgba(99, 102, 241, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 0.25rem 0.75rem;
-  border-radius: 100px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
-}
-
-/* ---- Scroll-indicator glass pill ---- */
-[data-theme="light"] .hero-scroll-hint {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-top-color: rgba(255, 255, 255, 0.9);
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
-}
-
-/* ---- Smooth border-radius on About image ---- */
-[data-theme="light"] .about-image {
-  background: rgba(255, 255, 255, 0.55) !important;
-  backdrop-filter: blur(30px) saturate(1.6);
-  -webkit-backdrop-filter: blur(30px) saturate(1.6);
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 32px rgba(99,102,241,0.12) !important;
-}
-
-/* ---- Badge: glass pill ---- */
-[data-theme="light"] .hero-badge {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  color: #4f46e5;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(99,102,241,0.1);
-}
-
-/* ---- Section-title gradient underline ---- */
+/* ---- Section 装饰线 ---- */
 [data-theme="light"] .section-divider {
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4, transparent);
+  background: linear-gradient(90deg, #5b58f0, #8b5cf6, #06b6d4, transparent);
   height: 3px;
-  border-radius: 2px;
 }
 
-/* ---- Backdrop-filter fallback ---- */
+/* ---- @supports 降级（不支持 backdrop-filter 的浏览器） ---- */
 @supports not (backdrop-filter: blur(1px)) {
   [data-theme="light"] .project-card,
   [data-theme="light"] .timeline-card,
@@ -654,7 +652,8 @@ section {
   [data-theme="light"] .skills-category,
   [data-theme="light"] .about-stat-badge,
   [data-theme="light"] .contact-item {
-    background: rgba(255, 255, 255, 0.92) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-color: rgba(91,88,240,0.12) !important;
   }
 }
 
