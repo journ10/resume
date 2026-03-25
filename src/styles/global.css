@@ -5,8 +5,8 @@
 /* --- Light (default) ----------------------------------- */
 :root,
 [data-theme="light"] {
-  --bg: #fcfcfd;
-  --bg-elevated: #f8fafc;
+  --bg: #eef2ff;
+  --bg-elevated: #e8edfa;
   --card: #ffffff;
   --card-muted: #f1f5f9;
 
@@ -57,48 +57,48 @@
   --text-secondary: var(--text-muted);
 }
 
-/* --- Dark ---------------------------------------------- */
+/* --- Dark / Ember -------------------------------------- */
 [data-theme="dark"] {
-  --bg: #0b1120;
-  --bg-elevated: #111827;
-  --card: #0f172a;
-  --card-muted: #172033;
+  --bg: #120a08;
+  --bg-elevated: #1c1008;
+  --card: #1e1008;
+  --card-muted: #2a1510;
 
-  --text: #e5eefb;
-  --text-muted: #b6c2d2;
-  --text-soft: #8a98ab;
+  --text: #f5e6e0;
+  --text-muted: #c9a99a;
+  --text-soft: #9a7060;
 
-  --primary: #60a5fa;
-  --primary-dark: #3b82f6;
-  --primary-light: #93c5fd;
-  --secondary: #38bdf8;
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --primary-light: #fb923c;
+  --secondary: #ef4444;
 
-  --border: #22304a;
-  --border-strong: #31415f;
+  --border: #3d1a10;
+  --border-strong: #5a2518;
 
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
-  --shadow-lg: 0 8px 22px rgba(0, 0, 0, 0.24);
+  --shadow: 0 16px 40px rgba(120, 20, 0, 0.38);
+  --shadow-lg: 0 8px 22px rgba(120, 20, 0, 0.24);
 
-  --link: #7cc4ff;
-  --link-hover: #a5d8ff;
+  --link: #fb923c;
+  --link-hover: #fed7aa;
 
-  --nav-bg: rgba(11, 17, 32, 0.78);
-  --hero-gradient: linear-gradient(135deg, #0b1120 0%, #111827 52%, #172033 100%);
-  --gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #38bdf8 100%);
-  --selection: rgba(96, 165, 250, 0.24);
-  --ring: rgba(96, 165, 250, 0.42);
+  --nav-bg: rgba(18, 10, 8, 0.82);
+  --hero-gradient: linear-gradient(135deg, #120a08 0%, #2d1008 52%, #3d1500 100%);
+  --gradient: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+  --selection: rgba(249, 115, 22, 0.24);
+  --ring: rgba(249, 115, 22, 0.42);
 
-  --hero-orb-1: radial-gradient(circle, #60a5fa, transparent);
-  --hero-orb-2: radial-gradient(circle, #38bdf8, transparent);
-  --hero-orb-3: radial-gradient(circle, #818cf8, transparent);
+  --hero-orb-1: radial-gradient(circle, #f97316, transparent);
+  --hero-orb-2: radial-gradient(circle, #ef4444, transparent);
+  --hero-orb-3: radial-gradient(circle, #dc2626, transparent);
 
-  --code-bg: #0a1222;
-  --code-text: #d8e6f8;
+  --code-bg: #1a0a05;
+  --code-text: #f5d5c5;
 
-  --badge-bg: rgba(96, 165, 250, 0.16);
-  --badge-text: #93c5fd;
+  --badge-bg: rgba(249, 115, 22, 0.16);
+  --badge-text: #fb923c;
 
-  --heart-color: #fb7185;
+  --heart-color: #ef4444;
 }
 
 /* --- Blue Tech ----------------------------------------- */
@@ -147,9 +147,9 @@
 
 /* --- Warm Paper ---------------------------------------- */
 [data-theme="warm-paper"] {
-  --bg: #f6f0e7;
-  --bg-elevated: #fbf6ef;
-  --card: #fffaf2;
+  --bg: #f2e8d5;
+  --bg-elevated: #f8f0e3;
+  --card: #fff8ee;
   --card-muted: #f0e7da;
 
   --text: #3a2f28;
@@ -171,7 +171,7 @@
   --link-hover: #8f4724;
 
   --nav-bg: rgba(251, 246, 239, 0.88);
-  --hero-gradient: linear-gradient(135deg, #3a2f28 0%, #5c3d24 50%, #4a3020 100%);
+  --hero-gradient: linear-gradient(135deg, #2d2218 0%, #4a2e14 50%, #3a2010 100%);
   --gradient: linear-gradient(135deg, #b5653b 0%, #c9864a 100%);
   --selection: rgba(181, 101, 59, 0.18);
   --ring: rgba(181, 101, 59, 0.28);
@@ -189,48 +189,48 @@
   --heart-color: #b5653b;
 }
 
-/* --- Purple Neon --------------------------------------- */
+/* --- Purple Neon / Cyberpunk --------------------------- */
 [data-theme="purple-neon"] {
-  --bg: #0c0616;
-  --bg-elevated: #150b24;
-  --card: rgba(22, 11, 36, 0.95);
-  --card-muted: #1c1030;
+  --bg: #050508;
+  --bg-elevated: #0a0a12;
+  --card: rgba(10, 10, 20, 0.92);
+  --card-muted: #0f0f1a;
 
-  --text: #f3eefe;
-  --text-muted: #c5b7e6;
-  --text-soft: #9e8fc4;
+  --text: #f0f0ff;
+  --text-muted: #a0a0c0;
+  --text-soft: #6060a0;
 
-  --primary: #b026ff;
-  --primary-dark: #9625db;
-  --primary-light: #d68cff;
-  --secondary: #ff47d5;
+  --primary: #FFE600;
+  --primary-dark: #e6cf00;
+  --primary-light: #fff176;
+  --secondary: #00FFFF;
 
-  --border: rgba(176, 38, 255, 0.28);
-  --border-strong: rgba(255, 71, 213, 0.42);
+  --border: rgba(255, 230, 0, 0.2);
+  --border-strong: rgba(0, 255, 255, 0.3);
 
-  --shadow: 0 18px 44px rgba(8, 0, 18, 0.52);
-  --shadow-lg: 0 10px 24px rgba(8, 0, 18, 0.34);
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.5);
 
-  --link: #d68cff;
-  --link-hover: #f0b6ff;
+  --link: #00FFFF;
+  --link-hover: #80ffff;
 
-  --nav-bg: rgba(12, 6, 22, 0.74);
-  --hero-gradient: linear-gradient(135deg, #0c0616 0%, #24103d 50%, #3d1366 100%);
-  --gradient: linear-gradient(135deg, #b026ff 0%, #ff47d5 100%);
-  --selection: rgba(176, 38, 255, 0.24);
-  --ring: rgba(255, 71, 213, 0.36);
+  --nav-bg: rgba(5, 5, 8, 0.88);
+  --hero-gradient: linear-gradient(135deg, #050508 0%, #0a0510 50%, #050a10 100%);
+  --gradient: linear-gradient(135deg, #FFE600 0%, #00FFFF 100%);
+  --selection: rgba(255, 230, 0, 0.2);
+  --ring: rgba(0, 255, 255, 0.4);
 
-  --hero-orb-1: radial-gradient(circle, #b026ff, transparent);
-  --hero-orb-2: radial-gradient(circle, #ff47d5, transparent);
-  --hero-orb-3: radial-gradient(circle, #7c3aed, transparent);
+  --hero-orb-1: radial-gradient(circle, #FFE600, transparent);
+  --hero-orb-2: radial-gradient(circle, #00FFFF, transparent);
+  --hero-orb-3: radial-gradient(circle, #ff00ff, transparent);
 
-  --code-bg: #140a22;
-  --code-text: #f0ddff;
+  --code-bg: #030308;
+  --code-text: #00FFFF;
 
-  --badge-bg: rgba(176, 38, 255, 0.16);
-  --badge-text: #e4a8ff;
+  --badge-bg: rgba(255, 230, 0, 0.12);
+  --badge-text: #FFE600;
 
-  --heart-color: #ff47d5;
+  --heart-color: #ff00ff;
 }
 
 /* --- Retro Terminal ------------------------------------ */
@@ -491,20 +491,25 @@ section {
   box-shadow: 0 8px 32px rgba(99, 102, 241, 0.38), 0 2px 8px rgba(99, 102, 241, 0.2);
 }
 
-/* Light: card glassmorphism enhancement */
+/* Light: liquid glass card effect */
 [data-theme="light"] .project-card,
 [data-theme="light"] .timeline-card,
 [data-theme="light"] .edu-card,
-[data-theme="light"] .skills-category {
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(99, 102, 241, 0.08);
+[data-theme="light"] .skills-category,
+[data-theme="light"] .about-stat-badge {
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="light"] .project-card:hover,
 [data-theme="light"] .timeline-card:hover,
 [data-theme="light"] .edu-card:hover {
-  border-color: rgba(99, 102, 241, 0.22);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 48px rgba(99, 102, 241, 0.14), inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
   transform: translateY(-4px);
 }
 
@@ -516,66 +521,42 @@ section {
 }
 
 /* =========================================================
-   DARK — depth glow & layered surfaces
+   DARK / EMBER — smoldering ember glow
    ========================================================= */
 
-/* Dark: star-field particle-feel background halos */
+/* Ember: deep ember glow halos */
 [data-theme="dark"] body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 15% 20%, rgba(96, 165, 250, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 85% 75%, rgba(129, 140, 248, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(56, 189, 248, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 50% at 15% 20%, rgba(249, 115, 22, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 75%, rgba(239, 68, 68, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
-}
-
-/* Dark: slowly drifting aurora curtain */
-@keyframes aurora-drift {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(30px, -20px) scale(1.03); }
-  66%  { transform: translate(-20px, 15px) scale(0.98); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-[data-theme="dark"] body::after {
-  content: '';
-  position: fixed;
-  inset: -10%;
-  background: radial-gradient(ellipse 55% 35% at 60% 30%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-  animation: aurora-drift 18s ease-in-out infinite;
 }
 
 [data-theme="dark"] .btn-primary {
-  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.28);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
 }
 
 [data-theme="dark"] .btn-primary:hover {
-  box-shadow: 0 8px 32px rgba(96, 165, 250, 0.48), 0 0 60px rgba(96, 165, 250, 0.12);
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.55), 0 0 60px rgba(239, 68, 68, 0.15);
 }
 
-/* Dark: card top highlight line */
-[data-theme="dark"] .project-card,
-[data-theme="dark"] .timeline-card,
-[data-theme="dark"] .edu-card {
-  border-top: 1px solid rgba(96, 165, 250, 0.08);
-}
-
+/* Ember: card hover glow */
 [data-theme="dark"] .project-card:hover,
 [data-theme="dark"] .timeline-card:hover,
 [data-theme="dark"] .edu-card:hover {
-  border-top-color: rgba(96, 165, 250, 0.35);
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.12), 0 16px 48px rgba(0, 0, 0, 0.5);
+  border-color: rgba(249, 115, 22, 0.35) !important;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.15), 0 16px 48px rgba(120, 20, 0, 0.45) !important;
   transform: translateY(-4px);
 }
 
-/* Dark: section title phosphor glow */
+/* Ember: section title warm glow */
 [data-theme="dark"] .section-title {
-  text-shadow: 0 0 40px rgba(96, 165, 250, 0.15);
+  text-shadow: 0 0 40px rgba(249, 115, 22, 0.15);
 }
 
 /* =========================================================
@@ -588,8 +569,8 @@ section {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 194, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 194, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 194, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -653,6 +634,29 @@ section {
   border-color: rgba(0, 194, 255, 0.6);
 }
 
+/* Blue Tech: hero scanline texture */
+[data-theme="blue-tech"] #hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 194, 255, 0.03) 3px,
+    rgba(0, 194, 255, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blue Tech: default cyan card borders */
+[data-theme="blue-tech"] .project-card,
+[data-theme="blue-tech"] .timeline-card,
+[data-theme="blue-tech"] .edu-card {
+  border-color: rgba(0, 194, 255, 0.25) !important;
+}
+
 /* =========================================================
    WARM PAPER — soft floating, gentle warmth
    ========================================================= */
@@ -670,14 +674,18 @@ section {
   opacity: 1;
 }
 
-/* Warm Paper: warm ink bleed at top and bottom edges */
+/* Warm Paper: vertical paper fiber texture */
 [data-theme="warm-paper"] body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 30% at 50% 0%, rgba(181, 101, 59, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 30% at 50% 100%, rgba(181, 101, 59, 0.06) 0%, transparent 60%);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 4px,
+    rgba(181, 101, 59, 0.018) 4px,
+    rgba(181, 101, 59, 0.018) 5px
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -718,92 +726,97 @@ section {
 }
 
 /* =========================================================
-   PURPLE NEON — neon glow, animated accent pulse
+   PURPLE NEON / CYBERPUNK — yellow & cyan overdrive
    ========================================================= */
 
-/* Purple Neon: flowing neon background glow */
-@keyframes neon-bg-flow {
-  0%   { opacity: 0.6; transform: scale(1) translate(0, 0); }
-  50%  { opacity: 1; transform: scale(1.05) translate(-2%, 2%); }
-  100% { opacity: 0.6; transform: scale(1) translate(0, 0); }
-}
-
-[data-theme="purple-neon"] body::before {
+/* Cyberpunk scanline overlay */
+[data-theme="purple-neon"] body::after {
   content: '';
   position: fixed;
-  inset: -5%;
-  background:
-    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(176, 38, 255, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 35% at 80% 80%, rgba(255, 71, 213, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(124, 58, 237, 0.07) 0%, transparent 45%);
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 255, 255, 0.025) 2px,
+    rgba(0, 255, 255, 0.025) 3px
+  );
   pointer-events: none;
-  z-index: 0;
-  animation: neon-bg-flow 10s ease-in-out infinite;
+  z-index: 9998;
 }
 
-@keyframes neon-pulse {
+/* Glitch animation on hero name */
+@keyframes glitch {
   0%, 100% {
-    box-shadow: 0 0 16px rgba(176, 38, 255, 0.45), 0 4px 20px rgba(176, 38, 255, 0.28);
+    text-shadow: 0 0 10px #FFE600, 2px 0 0 rgba(0, 255, 255, 0.7), -2px 0 0 rgba(255, 0, 255, 0.7);
+    transform: translateX(0);
   }
-  50% {
-    box-shadow: 0 0 28px rgba(176, 38, 255, 0.68), 0 0 52px rgba(255, 71, 213, 0.24);
-  }
-}
-
-[data-theme="purple-neon"] .btn-primary {
-  animation: neon-pulse 2.6s ease-in-out infinite;
-}
-
-[data-theme="purple-neon"] .btn-primary:hover {
-  animation: none;
-  box-shadow: 0 0 36px rgba(176, 38, 255, 0.75), 0 8px 32px rgba(255, 71, 213, 0.4);
+  20% { transform: translateX(-2px); text-shadow: 3px 0 0 rgba(0, 255, 255, 0.7), -3px 0 0 rgba(255, 0, 255, 0.7); }
+  40% { transform: translateX(2px); text-shadow: -3px 0 0 rgba(0, 255, 255, 0.7), 3px 0 0 rgba(255, 0, 255, 0.7); }
+  60% { transform: translateX(0); }
 }
 
 [data-theme="purple-neon"] .hero-name {
-  text-shadow: 0 0 30px rgba(176, 38, 255, 0.35);
+  animation: glitch 4s ease-in-out infinite;
+  color: #FFE600;
+}
+
+[data-theme="purple-neon"] .typewriter-text {
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
 }
 
 [data-theme="purple-neon"] .section-title {
-  text-shadow: 0 0 18px rgba(176, 38, 255, 0.22);
+  color: #FFE600;
+  text-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
 }
 
-/* Purple Neon: card constant neon borders */
+/* Cyberpunk card borders */
 [data-theme="purple-neon"] .project-card,
 [data-theme="purple-neon"] .timeline-card,
 [data-theme="purple-neon"] .edu-card,
 [data-theme="purple-neon"] .skills-category {
-  border: 1px solid rgba(176, 38, 255, 0.25) !important;
-  box-shadow: 0 0 10px rgba(176, 38, 255, 0.06), inset 0 0 20px rgba(176, 38, 255, 0.02);
+  border-color: rgba(255, 230, 0, 0.3) !important;
+  box-shadow: 0 0 8px rgba(255, 230, 0, 0.08) !important;
 }
 
 [data-theme="purple-neon"] .project-card:hover,
 [data-theme="purple-neon"] .timeline-card:hover,
 [data-theme="purple-neon"] .edu-card:hover {
-  border-color: var(--primary) !important;
-  box-shadow:
-    0 0 22px rgba(176, 38, 255, 0.35),
-    0 0 44px rgba(176, 38, 255, 0.12),
-    0 8px 36px rgba(8, 0, 18, 0.5) !important;
+  border-color: #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25), 0 8px 32px rgba(0, 0, 0, 0.6) !important;
   transform: translateY(-4px);
 }
 
-/* Purple Neon: neon section divider line */
+[data-theme="purple-neon"] .btn-primary {
+  background: linear-gradient(135deg, #FFE600, #00FFFF);
+  color: #050508;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(255, 230, 0, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+  animation: none;
+}
+
+[data-theme="purple-neon"] .btn-primary:hover {
+  box-shadow: 0 0 30px rgba(255, 230, 0, 0.6), 0 0 60px rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Cyberpunk: neon section divider */
 [data-theme="purple-neon"] .section-divider {
-  background: linear-gradient(90deg, #b026ff, #ff47d5, transparent);
-  box-shadow: 0 0 8px rgba(176, 38, 255, 0.5), 0 0 16px rgba(255, 71, 213, 0.3);
+  background: linear-gradient(90deg, #FFE600, #00FFFF, transparent);
+  box-shadow: 0 0 8px rgba(255, 230, 0, 0.5), 0 0 16px rgba(0, 255, 255, 0.3);
   height: 2px;
 }
 
-/* Purple Neon: glowing skill tags */
+/* Cyberpunk: skill tags */
 [data-theme="purple-neon"] .skill-tag {
-  border-color: rgba(176, 38, 255, 0.35);
-  box-shadow: 0 0 6px rgba(176, 38, 255, 0.15);
-  text-shadow: 0 0 8px rgba(176, 38, 255, 0.4);
+  border-color: rgba(255, 230, 0, 0.35);
+  box-shadow: 0 0 6px rgba(255, 230, 0, 0.15);
+  text-shadow: 0 0 8px rgba(255, 230, 0, 0.4);
 }
 
 [data-theme="purple-neon"] .skill-tag:hover {
-  border-color: var(--primary);
-  box-shadow: 0 0 14px rgba(176, 38, 255, 0.4), 0 0 28px rgba(176, 38, 255, 0.2);
+  border-color: #00FFFF;
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.4), 0 0 28px rgba(0, 255, 255, 0.2);
 }
 
 /* =========================================================
@@ -916,6 +929,15 @@ section {
     animation: none;
   }
 
+  [data-theme="purple-neon"] .hero-name {
+    animation: none;
+    text-shadow: 0 0 10px #FFE600;
+  }
+
+  [data-theme="purple-neon"] body::after {
+    display: none;
+  }
+
   [data-theme="retro-terminal"] body::after {
     display: none;
   }
@@ -930,10 +952,5 @@ section {
 
   [data-theme="warm-paper"] body::before {
     display: none;
-  }
-
-  [data-theme="dark"] body::after,
-  [data-theme="purple-neon"] body::before {
-    animation: none;
   }
 }

@@ -1,9 +1,9 @@
 export const themes = [
-  { id: 'light', label: 'Light', desc: 'Clean & minimal' },
-  { id: 'dark', label: 'Dark', desc: 'Deep & elegant' },
-  { id: 'blue-tech', label: 'Blue Tech', desc: 'Sci-fi precision' },
-  { id: 'warm-paper', label: 'Warm Paper', desc: 'Soft & editorial' },
-  { id: 'purple-neon', label: 'Purple Neon', desc: 'Vivid & electric' },
+  { id: 'light', label: 'Light', desc: 'Glass & luminous' },
+  { id: 'dark', label: 'Ember', desc: 'Deep & burning' },
+  { id: 'blue-tech', label: 'Blue Tech', desc: 'Neon grid & data' },
+  { id: 'warm-paper', label: 'Warm Paper', desc: 'Aged paper & ink' },
+  { id: 'purple-neon', label: 'Cyberpunk', desc: 'Yellow & cyan overdrive' },
   { id: 'retro-terminal', label: 'Retro Terminal', desc: 'Phosphor & code' },
 ] as const
 
