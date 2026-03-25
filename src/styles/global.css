@@ -644,6 +644,31 @@ section {
   height: 3px;
 }
 
+/* =========================================================
+   LIGHT — footer fix
+   ========================================================= */
+[data-theme="light"] footer {
+  background: var(--bg-elevated) !important;
+  color: var(--text-muted) !important;
+  border-top: 1px solid var(--border);
+}
+
+[data-theme="light"] footer p {
+  color: var(--text-soft) !important;
+}
+
+[data-theme="light"] .footer-links a {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .footer-links a:hover {
+  color: var(--primary) !important;
+}
+
+[data-theme="light"] .footer-heart {
+  color: var(--heart-color) !important;
+}
+
 /* ---- @supports 降级（不支持 backdrop-filter 的浏览器） ---- */
 @supports not (backdrop-filter: blur(1px)) {
   [data-theme="light"] .project-card,
