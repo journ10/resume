@@ -9,6 +9,8 @@
 
 基于 React + TypeScript + Vite 的现代化在线简历，支持密码访问控制、多主题切换、中英文双语。
 
+> ⚠️ **本仓库不接受外部 Pull Request。** 欢迎 Fork 后自由修改使用，如有问题请提 Issue。
+
 ---
 
 ## 功能特性
@@ -191,47 +193,3 @@ GitHub Actions 会自动构建并将站点发布到 GitHub Pages。
     }
   ]
 }
-```
-
----
-
-## 自定义
-
-- **修改主题**：编辑 CSS 变量（位于各组件样式文件）
-- **修改文案**：编辑 `src/i18n/zh.ts` 和 `src/i18n/en.ts`
-- **简历数据**：通过 Worker 管理后台上传，无需修改代码
-
----
-
-## 本地开发
-
-```bash
-git clone https://github.com/your-username/your-username.github.io.git
-cd your-username.github.io
-npm install
-cp .env.example .env  # 填写你的 Worker URL
-npm run dev
-```
-
----
-
-## 技术栈
-
-| 层级 | 技术 |
-|------|------|
-| 前端 | React 18、TypeScript、Vite、Pure CSS |
-| 后端 | Cloudflare Workers、KV Storage |
-| 部署 | GitHub Pages + GitHub Actions |
-| 费用 | 全部使用免费服务 |
-
----
-
-## 相关项目
-
-- 🔧 [resume-worker](https://github.com/journ10/resume-worker) — 后端 Cloudflare Worker 服务
-
----
-
-## License
-
-[MIT](LICENSE) © 2026 journ10
