@@ -1,10 +1,11 @@
 import { useTypewriter } from '../../hooks/useTypewriter'
 import { useLocale } from '../../i18n/index'
-import { personalInfo } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import './Hero.css'
 
 export default function Hero() {
   const { lang, t } = useLocale()
+  const { personalInfo } = useResumeData()
   const displayed = useTypewriter(personalInfo.roles[lang])
 
   return (

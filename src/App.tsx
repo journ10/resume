@@ -1,3 +1,7 @@
+import { useState, useEffect } from 'react'
+import PasswordGate from './components/PasswordGate/PasswordGate'
+import { ResumeDataProvider } from './context/ResumeDataContext'
+import type { ResumeData } from './context/ResumeDataContext'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
@@ -11,8 +15,25 @@ import BackToTop from './components/BackToTop/BackToTop'
 import './App.css'
 
 function App() {
+  const [resumeData, setResumeData] = useState<ResumeData | null>(null)
+
+  useEffect(() => {
+    const cached = sessionStorage.getItem('resumeData')
+    if (cached) {
+      try {
+        setResumeData(JSON.parse(cached))
+      } catch {
+        sessionStorage.removeItem('resumeData')
+      }
+    }
+  }, [])
+
+  if (!resumeData) {
+    return <PasswordGate onSuccess={setResumeData} />
+  }
+
   return (
-    <>
+    <ResumeDataProvider data={resumeData}>
       <Navbar />
       <Hero />
       <About />
@@ -23,7 +44,7 @@ function App() {
       <Contact />
       <Footer />
       <BackToTop />
-    </>
+    </ResumeDataProvider>
   )
 }
 

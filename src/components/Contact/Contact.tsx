@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useLocale } from '../../i18n/index'
-import { personalInfo } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import './Contact.css'
 
 export default function Contact() {
   useScrollReveal()
   const { t } = useLocale()
+  const { personalInfo } = useResumeData()
   const [submitted, setSubmitted] = useState(false)
 
   function handleSubmit(e: React.FormEvent) {

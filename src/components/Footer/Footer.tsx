@@ -1,9 +1,10 @@
 import { useLocale } from '../../i18n/index'
-import { personalInfo } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import './Footer.css'
 
 export default function Footer() {
   const { t } = useLocale()
+  const { personalInfo } = useResumeData()
 
   return (
     <footer>

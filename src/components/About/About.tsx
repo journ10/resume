@@ -1,11 +1,12 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useLocale } from '../../i18n/index'
-import { personalInfo, aboutInfo } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import './About.css'
 
 export default function About() {
   useScrollReveal()
   const { lang, t } = useLocale()
+  const { personalInfo, aboutInfo } = useResumeData()
 
   return (
     <section id="about">

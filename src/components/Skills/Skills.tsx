@@ -1,6 +1,6 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useLocale } from '../../i18n/index'
-import { skillCategories } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import type { BilingualStringArray } from '../../data/resumeData'
 import './Skills.css'
 
@@ -11,6 +11,7 @@ function isBilingualStringArray(tags: string[] | BilingualStringArray): tags is 
 export default function Skills() {
   useScrollReveal()
   const { lang, t } = useLocale()
+  const { skillCategories } = useResumeData()
 
   return (
     <section id="skills">

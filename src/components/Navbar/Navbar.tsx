@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { useTheme } from '../../hooks/useTheme'
 import { useLocale } from '../../i18n/index'
-import { personalInfo } from '../../data/resumeData'
+import { useResumeData } from '../../context/ResumeDataContext'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './Navbar.css'
 
@@ -14,6 +14,7 @@ export default function Navbar() {
   const activeId = useScrollSpy(navHrefs)
   const { theme, setTheme } = useTheme()
   const { lang, t, setLang } = useLocale()
+  const { personalInfo } = useResumeData()
 
   const navItems = [
     { href: 'hero', label: t.nav.home },
