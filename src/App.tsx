@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import PasswordGate from './components/PasswordGate/PasswordGate'
 import { ResumeDataProvider } from './context/ResumeDataContext'
 import type { ResumeData } from './context/ResumeDataContext'
+import { sanitizeResumeData } from './utils/sanitize'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
@@ -26,13 +27,16 @@ function App() {
           parsed &&
           typeof parsed === 'object' &&
           parsed.personalInfo &&
+          typeof parsed.personalInfo.name === 'string' &&
+          typeof parsed.personalInfo.email === 'string' &&
           parsed.aboutInfo &&
+          typeof parsed.aboutInfo.yearsExperience === 'string' &&
           Array.isArray(parsed.skillCategories) &&
           Array.isArray(parsed.experiences) &&
           Array.isArray(parsed.educations) &&
           Array.isArray(parsed.projects)
         ) {
-          setResumeData(parsed)
+          setResumeData(sanitizeResumeData(parsed))
         } else {
           sessionStorage.removeItem('resumeData')
         }
@@ -43,7 +47,7 @@ function App() {
   }, [])
 
   if (!resumeData) {
-    return <PasswordGate onSuccess={setResumeData} />
+    return <PasswordGate onSuccess={(data) => setResumeData(sanitizeResumeData(data))} />
   }
 
   return (

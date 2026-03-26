@@ -29,7 +29,15 @@ export default function PasswordGate({ onSuccess }: PasswordGateProps) {
         body: JSON.stringify({ password }),
       })
       if (!res.ok) {
-        setError('密码无效或已过期')
+        if (res.status === 429) {
+          setError('请求过于频繁，请稍后再试')
+        } else if (res.status === 404) {
+          setError('简历数据尚未配置，请联系管理员')
+        } else if (res.status === 403) {
+          setError('密码无效或已过期')
+        } else {
+          setError('服务器错误，请稍后重试')
+        }
         return
       }
       const data: ResumeData = await res.json()
