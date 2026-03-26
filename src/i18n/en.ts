@@ -62,7 +62,12 @@ export const en: Locale = {
     messageLabel: 'Message',
     messagePlaceholder: 'Tell me about your project or idea...',
     sendBtn: 'Send Message',
+    sendingBtn: 'Sending...',
     sentBtn: 'Sent!',
+    errorRequired: 'Please fill in your name, email, and message',
+    errorRateLimit: 'Too many requests, please try again later',
+    errorNetwork: 'Network error, please try again later',
+    errorServer: 'Server error, please try again later',
   },
   footer: {
     home: 'Home',

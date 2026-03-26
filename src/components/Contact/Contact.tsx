@@ -4,16 +4,61 @@ import { useLocale } from '../../i18n/index'
 import { useResumeData } from '../../context/ResumeDataContext'
 import './Contact.css'
 
+const WORKER_URL = import.meta.env.VITE_WORKER_URL ?? ''
+
 export default function Contact() {
   useScrollReveal()
   const { t } = useLocale()
   const { personalInfo } = useResumeData()
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setError('')
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError(t.contact.errorRequired)
+      return
+    }
+
+    setLoading(true)
+    try {
+      const res = await fetch(`${WORKER_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message }),
+      })
+      if (res.ok) {
+        const data = await res.json() as { ok?: boolean }
+        if (data.ok) {
+          setSubmitted(true)
+          setName('')
+          setEmail('')
+          setSubject('')
+          setMessage('')
+          setTimeout(() => setSubmitted(false), 3000)
+        } else {
+          setError(t.contact.errorServer)
+        }
+      } else if (res.status === 429) {
+        setError(t.contact.errorRateLimit)
+      } else if (res.status === 400) {
+        const data = await res.json() as { error?: string }
+        setError(data.error ?? t.contact.errorServer)
+      } else {
+        setError(t.contact.errorServer)
+      }
+    } catch {
+      setError(t.contact.errorNetwork)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -71,27 +116,58 @@ export default function Contact() {
           <form className="contact-form reveal-right" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">{t.contact.nameLabel}</label>
-              <input type="text" id="name" placeholder={t.contact.namePlaceholder} />
+              <input
+                type="text"
+                id="name"
+                placeholder={t.contact.namePlaceholder}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                disabled={loading}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="email">{t.contact.emailInputLabel}</label>
-              <input type="email" id="email" placeholder="your@email.com" />
+              <input
+                type="email"
+                id="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="subject">{t.contact.subjectLabel}</label>
-              <input type="text" id="subject" placeholder={t.contact.subjectPlaceholder} />
+              <input
+                type="text"
+                id="subject"
+                placeholder={t.contact.subjectPlaceholder}
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                disabled={loading}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="message">{t.contact.messageLabel}</label>
-              <textarea id="message" placeholder={t.contact.messagePlaceholder}></textarea>
+              <textarea
+                id="message"
+                placeholder={t.contact.messagePlaceholder}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                disabled={loading}
+              ></textarea>
             </div>
+            {error && <p className="contact-error">{error}</p>}
             <button
               type="submit"
               className="btn btn-primary btn-submit"
+              disabled={loading || submitted}
               style={submitted ? { background: 'linear-gradient(135deg,#10b981,#059669)' } : undefined}
             >
               {submitted ? (
                 <><i className="fas fa-check"></i> {t.contact.sentBtn}</>
+              ) : loading ? (
+                <><i className="fas fa-spinner fa-spin"></i> {t.contact.sendingBtn}</>
               ) : (
                 <><i className="fas fa-paper-plane"></i> {t.contact.sendBtn}</>
               )}

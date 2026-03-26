@@ -60,7 +60,12 @@ export const zh = {
     messageLabel: '留言内容',
     messagePlaceholder: '请输入您想说的内容...',
     sendBtn: '发送消息',
+    sendingBtn: '发送中...',
     sentBtn: '发送成功！',
+    errorRequired: '请填写姓名、邮箱和留言内容',
+    errorRateLimit: '发送过于频繁，请稍后再试',
+    errorNetwork: '网络错误，请稍后再试',
+    errorServer: '服务器错误，请稍后重试',
   },
   footer: {
     home: '首页',

@@ -2,6 +2,12 @@
   background: var(--bg-elevated);
 }
 
+.contact-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin: 0 0 0.75rem;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
