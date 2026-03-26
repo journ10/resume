@@ -61,13 +61,28 @@
 |-------------|------|
 | `WORKER_URL` | 你的 Cloudflare Worker 地址（来自 Step 1），例如 `https://resume-worker.your-subdomain.workers.dev` |
 
-### Step 4：触发部署
+### Step 4：配置 base 路径
+
+由于本项目部署为 GitHub Pages 项目站点，需要在 `vite.config.ts` 中将 `base` 设置为你的仓库名：
+
+```ts
+export default defineConfig({
+  plugins: [react()],
+  base: '/your-repo-name/',
+})
+```
+
+> 如果你的仓库名也是 `resume`，则无需修改，已默认配置为 `/resume/`。
+
+### Step 5：触发部署
 
 Push 任意提交到 `main` 分支，或前往 **Actions → Deploy to GitHub Pages → Run workflow** 手动触发。
 
 GitHub Actions 会自动构建并将站点发布到 GitHub Pages。
 
-### Step 5：上传简历数据 & 创建密码
+部署完成后，访问地址为：`https://your-username.github.io/your-repo-name/`
+
+### Step 6：上传简历数据 & 创建密码
 
 1. 访问你的 Worker 管理后台（`https://your-worker-url/admin-panel-x7k9`）
 2. 使用你的 `ADMIN_KEY` 登录
@@ -189,7 +204,7 @@ GitHub Actions 会自动构建并将站点发布到 GitHub Pages。
       },
       "tags": ["React", "TypeScript", "Cloudflare Workers"],
       "github": "https://github.com/zhangsan/resume",
-      "demo": "https://zhangsan.github.io"
+      "demo": "https://zhangsan.github.io/resume"
     }
   ]
 }
